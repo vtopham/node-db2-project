@@ -6,7 +6,9 @@ module.exports = {
     client: 'sqlite3',
     connection: {
       filename: './car-dealer.sqlite3'
-    }
+    },
+    useNullAsDefault: true
+
   },
 
   // staging: {

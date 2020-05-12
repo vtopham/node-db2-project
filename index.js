@@ -40,6 +40,22 @@ server.post('/cars', validateCar, (req, res) => {
 })
 
 //get a specific car
+server.get('/cars/:id', (req, res) => {
+    db.select('*')
+        .from('cars')
+        .where({id: req.params.id})
+        .then(car => {
+            if(car[0]) {
+                res.status(200).json({data: car})
+            } else {
+                res.status(404).json({message: "car not found"})
+            }
+            
+        })
+        .catch(err => {
+            res.status(500).json({message: "Error fetching car", error: err})
+        })
+})
 
 //update a car
 

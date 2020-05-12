@@ -1,13 +1,30 @@
 {
-    "name": "node-db2-challenge",
-    "version": "1.0.0",
-    "description": "Node DB 2 Module Challenge",
-    "main": "index.js",
-    "scripts": {
-        "server": "nodemon index.js"
-    },
-    "author": "Lambda School",
-    "devDependencies": {
-        "nodemon": "^2.0.2"
-    }
+  "name": "node-db2-project",
+  "version": "1.0.0",
+  "description": "In this challenge, you will write an API that can be used to manage _Cars_ stored in a Relational Database.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "gcc": "^1.0.2",
+    "knex": "^0.21.1",
+    "nodemon": "^2.0.3",
+    "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtopham/node-db2-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vtopham/node-db2-project/issues"
+  },
+  "homepage": "https://github.com/vtopham/node-db2-project#readme"
 }

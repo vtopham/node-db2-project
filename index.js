@@ -27,7 +27,19 @@ server.get('/cars', (req, res) => {
 
 
 //add to the list of cars
+server.post('/cars', validateCar, (req, res) => {
+    db('cars')
+        .insert(req.body, "id")
+        .then(id => {
+            res.status(201).json({message: `car ${id} successfully created!`})
+        })
+        .catch(err => {
+            res.status(500).json({message: 'Error creating account'})
+        })
 
+})
+
+//get a specific car
 
 //update a car
 
@@ -37,7 +49,17 @@ server.get('/cars', (req, res) => {
 
 //middleware
 
+function validateCar(req, res, next) {
+    if(req.body.VIN && req.body.Make && req.body.Model && req.body.Mileage) {
+        next();
+    } else {
+        res.status(404).json({message: "Please include the VIN, make, model, and mileage of the vehicle."})
+    }
+}
 
+function validateCarId(req, res, next) {
+    
+}
 server.listen(5000, _ => {
     console.log("Listening on 5000")
 })
